@@ -1199,6 +1199,7 @@ a {
   }
 }
 .container {
+  
   max-width: 1376px;
   width: 100%;
   margin: auto;
@@ -1271,6 +1272,7 @@ a {
   background-color: rgb(247, 247, 247);
 }
 .admin-container > aside {
+  max-height: 100vh;
   width: 100%;
   background-color: white;
   padding: 1rem;
