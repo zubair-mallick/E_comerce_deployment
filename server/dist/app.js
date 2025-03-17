@@ -20,7 +20,7 @@ config({
 dotenv.config(); // Load environment variables
 const port = process.env.PORT || 3000;
 const stripeKey = process.env.STRIPE_KEY || "";
-const redisURI = process.env.REDIS_URI || "";
+const redisURI = process.env.REDIS_EXTERNAL_URL || process.env.REDIS_INTERNAL_URL;
 connectdb();
 export const redis = connectRedis(redisURI);
 export const stripe = new Stripe(stripeKey);

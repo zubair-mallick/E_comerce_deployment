@@ -7,21 +7,33 @@ import  {Redis}  from "ioredis" ;
 
 
 
-export const connectRedis = (redisURI:string)=>
-{
-const redis = new Redis(redisURI) ;
+export const connectRedis = (redisURI:string) => {
+  let redis;
 
-redis.on("connect",()=>console.log("Redis Connected: "))
-redis.on("error",(e)=>console.log("Redis Have Error: " + e.message))
+  if (!redisURI) {
+    throw new Error("Redis URI not provided");
+  }
 
+  if (redisURI.startsWith("rediss://")) {
+    // External connection with TLS and authentication
+    const url = new URL(redisURI);
+    redis = new Redis({
+      host: url.hostname,
+      port: Number(url.port),
+      username: url.username, // Set the username
+      password: url.password, // Set the password
+      tls: {} // Enable TLS
+    });
+  } else {
+    // Internal connection
+    redis = new Redis(redisURI);
+  }
 
-return redis
+  redis.on("connect", () => console.log("✅ Redis Connected"));
+  redis.on("error", (e) => console.log("❌ Redis Error: " + e.message));
 
-
-
-
-
-}
+  return redis;
+};
 
 export const connectdb = () => {
   mongoose
