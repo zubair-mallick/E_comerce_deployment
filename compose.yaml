@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    ports:
+      - "3000:3000"
+      - "6379:6379"   # Redis
+      - "8001:8001"   # Redis Insight
+    environment:
+      - REDIS_URI=redis://localhost:6379

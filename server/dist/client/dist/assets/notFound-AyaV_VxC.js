@@ -1,0 +1,1 @@
+import{j as o}from"./index-DKYrVGzK.js";import{a as r}from"./index-DQEopMfT.js";const n=()=>o.jsxs("div",{className:"container not-found",children:[o.jsx(r,{}),o.jsx("h1",{children:"Page Not Found"})]});export{n as default};
