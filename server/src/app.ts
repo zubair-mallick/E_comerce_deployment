@@ -39,7 +39,7 @@ const app = express();
 
 app.use(cors({
 
-    origin:JSON.parse(process.env.CORS_ORIGIN!),
+    origin:process.env.CORS_ORIGIN,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
