@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node dist/app.js",
+    "build": "npm install --prefix ./dist/client && npm run build --prefix ./dist/client && npm install",
     "watch": "tsc -w",
    "dev": "nodemon dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
