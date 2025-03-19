@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "builds": [
     {
       "src": "dist/app.js",
@@ -7,10 +8,22 @@
       "config": { "includeFiles": ["dist/**"] }
     }
   ],
+=======
+>>>>>>> 27dd639 (vercel configuration)
   "routes": [
     {
       "src": "/(.*)",
       "dest": "dist/app.js"
     }
+<<<<<<< HEAD
   ]
 }
+=======
+  ],
+  "functions": {
+    "dist/app.js": {
+      "runtime": "nodejs"
+    }
+  }
+}
+>>>>>>> 27dd639 (vercel configuration)
